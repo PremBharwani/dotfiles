@@ -12,6 +12,14 @@
 set $mod Mod4
 
 ############ CUSTOM EDITS ############
+# Brightness notifs [DEBUG]
+exec_always --no-startup-id ~/.config/dunst/brightness_notif.sh
+
+# Enable snips [https://github.com/srijanshetty/snips]
+# Essentially a clipboard that allows me to copy & paste anywhere. Stores my content across sessions! 
+bindsym $mod+x exec "gnome-terminal --tab --title=snips-copy -- zsh -c 'source ~/.zshrc; snips copy; exec zsh'"
+bindsym $mod+Shift+x exec "gnome-terminal --tab --title=snips-new -- zsh -c 'source ~/.zshrc;echo SnipName; read SNIP_NAME; snips new $SNIP_NAME; exec zsh'"
+
 # Enable logging
 set $log_file /var/log/i3.log
 
@@ -41,8 +49,8 @@ client.focused          #30fcff #00c5db #ffffff #30fcff    #2dcffc
 for_window [instance = "__focused__"] border pixel 5
 
 # Sreen brightness controls | sudo apt install light && sudo chmod +s /usr/bin/light
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightnes
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightnes
 
 # To set the desktop background wallpaper # Will need to install feh first : sudo apt-get install feh
 exec feh --bg-scale --zoom fill /home/prembharwani/Pictures/back_batman.png
