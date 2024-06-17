@@ -48,8 +48,9 @@ bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightnes
 # Setting up shortcut keybindings.
 bindsym $mod+q exec brave-browser
 bindsym $mod+a exec nautilus
+bindsym $mod+o exec obsidian
 bindsym $mod+c exec gnome-control-center
-bindsym $mod+Shift+s exec spotify-adfree
+bindsym $mod+Shift+s exec spotify
 
 
 # To toggle nightlight.
