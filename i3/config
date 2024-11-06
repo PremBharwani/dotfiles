@@ -7,6 +7,10 @@ set $alt Mod1
 # Custom Edits
 ##############
 
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show 
+
 # Configuring i3 gaps
 gaps inner 12
 gaps outer 5
@@ -26,6 +30,8 @@ bindsym $mod+w layout tabbed
 # To take screenshots # Install using : sudo apt install shutter
 # Change the shutter configuration from the app to copy the screenshot to clipboard by default/saving and whether it should open the main window or not as per your choice
 bindsym --release $mod+Print exec shutter -s
+bindsym --release Print exec shutter -f -e
+
 
 # Enable logging 
 set $log_file /var/log/i3.log
@@ -41,17 +47,17 @@ exec xinput set-prop "DELL0979:00 04F3:30C4 Touchpad" "libinput Tapping Enabled"
 exec xrandr --output HDMI-1 --auto --left-of eDP-1
 
 # Sreen brightness controls | sudo apt install light && sudo chmod +s /usr/bin/light
-bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightnes
+bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightnes
 
 
 # Setting up shortcut keybindings.
-bindsym $mod+q exec brave-browser
+bindsym $mod+q exec firefox
 bindsym $mod+a exec nautilus
 bindsym $mod+o exec obsidian
 bindsym $mod+c exec gnome-control-center
 bindsym $mod+Shift+s exec spotify
-
+bindsym $mod+m exec pavucontrol
 
 # To toggle nightlight.
 bindsym $mod+n exec "sct 2400"
@@ -87,7 +93,7 @@ bindsym $super+Return exec i3-sensible-terminal
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # common apps keybinds
-bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
+#bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
 
 #change volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
