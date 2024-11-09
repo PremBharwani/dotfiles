@@ -90,7 +90,7 @@ exec --no-startup-id compton -b
 bindsym $super+Return exec i3-sensible-terminal
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+space exec --no-startup-id dmenu_run
 
 # common apps keybinds
 #bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
@@ -135,7 +135,7 @@ bindsym $super+f fullscreen toggle
 #bindsym $super+s layout toggle split
 
 # toggle tiling / floating
-bindsym $super+space floating toggle
+bindsym $super+Shift+f floating toggle
 
 # change focus between tiling / floating windows
 bindsym $super+Shift+space focus mode_toggle
